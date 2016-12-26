@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SeqList", "SeqList\SeqList.vcxproj", "{CFD4440C-D965-4C7D-BD02-47B096993105}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "List", "List\List.vcxproj", "{3072C78C-5B49-4871-864E-AC3CD423DE65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFD4440C-D965-4C7D-BD02-47B096993105}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CFD4440C-D965-4C7D-BD02-47B096993105}.Debug|Win32.Build.0 = Debug|Win32
+		{CFD4440C-D965-4C7D-BD02-47B096993105}.Release|Win32.ActiveCfg = Release|Win32
+		{CFD4440C-D965-4C7D-BD02-47B096993105}.Release|Win32.Build.0 = Release|Win32
+		{3072C78C-5B49-4871-864E-AC3CD423DE65}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3072C78C-5B49-4871-864E-AC3CD423DE65}.Debug|Win32.Build.0 = Debug|Win32
+		{3072C78C-5B49-4871-864E-AC3CD423DE65}.Release|Win32.ActiveCfg = Release|Win32
+		{3072C78C-5B49-4871-864E-AC3CD423DE65}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

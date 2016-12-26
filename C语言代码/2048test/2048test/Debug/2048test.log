@@ -1,0 +1,17 @@
+﻿生成启动时间为 2016/8/19 6:54:33。
+     1>项目“F:\C语言代码\2048test\2048test\2048test.vcxproj”在节点 2 上(build 个目标)。
+     1>PrepareForBuild:
+         正在创建目录“F:\C语言代码\2048test\Debug\”。
+       InitializeBuildStatus:
+         正在创建“Debug\2048test.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ManifestResourceCompile:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\2048test.exe.embed.manifest.res" Debug\2048test_manifest.rc 
+       Link:
+         f:\软件\2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\C语言代码\2048test\Debug\2048test.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\2048test.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\C语言代码\2048test\Debug\2048test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\C语言代码\2048test\Debug\2048test.lib" /MACHINE:X86 Debug\2048test.exe.embed.manifest.res
+     1>LINK : error LNK2001: 无法解析的外部符号 _mainCRTStartup
+     1>F:\C语言代码\2048test\Debug\2048test.exe : fatal error LNK1120: 1 个无法解析的外部命令
+     1>已完成生成项目“F:\C语言代码\2048test\2048test\2048test.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.62

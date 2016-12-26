@@ -1,0 +1,404 @@
+#ifndef __GLGAMEBASE_RC__
+#define __GLGAMEBASE_RC__
+
+#include "GLGameBaseResource.h"
+#ifndef DS_MODALFRAME
+#include <winuser.h>
+#endif
+
+/////////////////////////////////////////////
+//	字符串资源
+/////////////////////////////////////////////
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_BASE_OK			"确定(&O)"
+	IDS_BASE_ABORT			"终止(&A)"
+	IDS_BASE_RETRY			"重试(&R)"
+	IDS_BASE_IGNORE			"忽略(&I)"
+	IDS_BASE_YES			"是(&Y)"
+	IDS_BASE_NO			"否(&N)"
+	IDS_BASE_CANCEL			"取消(&C)"
+
+	IDS_BASE_WSAECONNRESET		"错误\n\n网络连接被服务器复位"
+	IDS_BASE_WSAECONNREFUSED	"错误\n\n服务没有启动，请尝试连接其它服务器"
+	IDS_BASE_WSAENETRESET		"错误\n\nWindows Socket放弃了连接，连接被复位"
+	IDS_BASE_WSAECONNABORTED	"错误\n\n由于超时或其它原因引起连接被中断"
+	IDS_BASE_WSAEPROXY		"错误\n\n无法与代理服务器建立连接，请检查代理服务器是否正常工作"
+	IDS_BASE_WSAESOCKS		"错误\n\n无法通过代理服务器建立连接，请检查代理服务器是否支持SOCKS协议"
+	IDS_BASE_WSAEDEFAULT		"错误\n\n由于网络错误或者其它原因引起连接被中断"
+	IDS_BASE_WSAETIMEOUT		"错误\n\n由于连接、发送或者接收超时，连接被中断"
+
+	IDS_BASE_CONNECTING		"正在与游戏服务器连接..."
+	IDS_BASE_CANNOTCONNECT		"无法与服务器连接。\n\n请检查 Internet 是否连通"
+	IDS_BASE_TIMEOUT		"数据发送或接收超时，是否需要继续等待？"
+
+	IDS_BASE_WAITINGSERVER		"正在等待服务器应答..."
+	IDS_BASE_INVALIDARGUMENT	"本游戏只能从游戏大厅中进入，请安装并启动游戏大厅。"
+	IDS_BASE_READINGPLAYER		"正在读取游戏者信息..."
+	IDS_BASE_CANNOTREADPLAYER	"现在无法进入游戏通道，请过一会儿再试试"
+	IDS_BASE_ILLEGALUSERNAME	"发现非法用户名企图登录！"
+	IDS_BASE_READINGGAMEDATA	"正在读取游戏进程数据..."
+
+	IDS_BASE_ROOMKICKOUT		"***警告***：\n\n发现另一位用户以您的用户名和口令进入了游戏室，您与服务器的连接已经断开。\n\n为了保证您自身的利益，请千万不要将用户名和密码告诉他人。"
+	IDS_BASE_ROOMBREAK		"***警告***：\n\n您的游戏室已经与服务器失去联系，游戏无法继续进行"
+	IDS_BASE_PLAYERLEAVE		"[%s] 已经退出该游戏，游戏结束"
+	IDS_BASE_PLAYERESCAPE		"[%s] 已强行退出游戏，游戏结束"
+	IDS_BASE_PLAYERTIMEOUT		"[%s] 与游戏服务器失去联系，可能已经断线，游戏结束"
+	IDS_BASE_UNKNOWN		"出现未知类型的致命错误，游戏结束"
+
+	IDS_BASE_USERNAME		"用户名"
+	IDS_BASE_NICKNAME		"中文名字"
+	IDS_BASE_RANK			"等级"
+	IDS_BASE_SCORE			"积分"
+	IDS_BASE_WATCHOBJECT		"旁观对象"
+	IDS_BASE_GAMEOVERALL	"游戏结束，请退出"
+	IDS_BASE_BREAK			"[%s]断线了，\n\n稍等一会儿，他可能会重新连通的。"
+	IDS_BASE_REENTER		"[%s]的网络重新连通!"
+
+	IDS_BASE_FONT_SONGTI		"宋体"
+	IDS_BASE_FONT_KAITI2312		"楷体_GB2312"
+	IDS_BASE_ABOUT				"关于%s"
+	IDS_BASE_MUSTEXIT			"游戏结束，您现在必须退出游戏"
+	IDS_BASE_ROOMBREAK2			"***警告***：\n\n[%s]的游戏室已经与服务器失去联系，游戏无法继续进行"
+	IDS_BASE_LANGUAGE			"936"
+	IDS_GLFRAME_BT_SETUP		"设置"
+
+	IDS_BASE_SVRDISPERMITTRUST	"服务器不允许托管游戏。"
+	IDS_BASE_SVRDISPMTUNTRUST	"服务器不允许解除托管游戏。"
+	IDS_BASE_OVERUNTRUSTCOUNT	"您在这局游戏的托管次数已经超过%d，不能再解除托管。"
+	IDS_BASE_TRUSTPROMPT		"游戏托管中... 您已经托管了%d次，托管超过%d次将不能解除托管。"
+	IDS_BASE_CANNTTRUSTEXIT		"服务器不允许托管退出。"
+	IDS_BASE_MONEYREPORT		"本局游戏结束后财富值的输赢：\n\n"
+	IDS_BASE_OTTRUSTPROMPT		"超时自动托管中... 您已经托管了%d次，托管超过%d次将不能解除托管。"
+	IDS_BASE_UNTRUSTPROMPT		"已经成功解除托管，您已经托管了%d次，托管超过%d次将不能解除托管。"
+
+END
+/*#define BET_ERROR_SUCCESS		0		// 下注成功
+// 下面都是下注失败的原因
+#define BET_FAIL				1		// 未知的失败
+#define BET_ROOMCANNOTBET		2		// 房间不允许下注
+#define BET_DISAGREE			3		// 对方不同意下注
+#define BET_NOMONEY1			4		// 下棋者Bet1钱不够，旁观者自己钱不够
+#define BET_NOMONEY2			5		// 下棋者Bet2钱不够
+#define BET_NOMONEYALL			6		// 钱都不够
+#define BET_BETTIMEOVER			7		// 已经过了下注时间
+#define BET_ROOMCANNOTTEACH		8		// 房间不允许下指导棋
+#define BET_CHANGEBETTYPE		9		// 中途修改了下注的类型(是否指导棋)
+#define BET_OPCLIENTCANNOTBET	10		// 对方客户端不支持下注
+#define BET_MAXPLAYER			11		// 竞猜的人数已满
+#define BET_MAXBET				12		// 竞猜的项目已满
+#define BET_BETSTOP				13		// 暂停竞猜
+#define BET_SERVERBUSY			14		// 服务器忙
+#define BET_PLAYERBUSY			15		// 对方正忙，顾不着处理请求
+#define BET_CHANGETEACHER		16		// 已经定了由谁付指导费，不可以再修改*/
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_Bet_Agree           "同意"
+    IDS_Bet_DisAgree        "不同意"
+    IDS_Bet_Success         "竞猜成功！"
+    IDS_Bet_Fail            "竞猜失败！"
+    IDS_Bet_Teach           "有偿指导"
+    IDS_Bet_Draw            "双方和"
+	IDS_Bet_ServerBusy		"网络忙，等会儿再试吧。"
+	IDS_Bet_OpBusy			"对方正忙，等会儿再试吧。"
+	IDS_Bet_RoomCNTBet		"您所在的房间不允许竞猜。"
+	IDS_Bet_DisAgreeBet		"对方不同意竞猜。"
+	IDS_Bet_NoMoney1		"您的财富不够参加竞猜。"
+	IDS_Bet_NoMoney2		"对方的财富不够参加竞猜。"
+	IDS_Bet_NoMoneyAll		"比赛选手的财富都不够参加竞猜。"
+	IDS_Bet_TimeOver		"已经过了竞猜下注的时间，等下一局吧。"
+	IDS_Bet_RoomCNTTeach	"您所在的房间不允许进行指导方式的竞猜。"
+	IDS_Bet_ChangeBetType	"已经定了竞猜的方式，不可以再修改是否指导。"
+	IDS_Bet_OpClientCNTBet	"对方的程序太旧了，没有竞猜功能！"
+	IDS_Bet_TooManyPlayer	"本局参加竞猜的人数已满，等下一局吧。"
+	IDS_Bet_TooManyBet		"参加竞猜的人满为患，等会儿再试吧。"
+	IDS_Bet_Stop			"竞猜活动已经停止了。"
+	IDS_Bet_ChangeTeacher	"已经定了由谁付指导费，不可以再修改了。"
+	IDS_Bet_MoneyNull		"财富值已经是0，或者在其他的游戏或竞猜中财富被锁定。"
+    IDS_Bet_MyMoney         "自己所剩的财富：%d点"
+    IDS_Bet_OpMoney         "对方所剩的财富：%d点"
+    IDS_Bet_InvalidBet      "无效的竞猜额！\n不能所有的竞猜额都是0。"
+    IDS_Bet_InvalidBet2     "无效的竞猜额！\n有偿指导方式只能由一个人付指导费。"
+    IDS_Bet_InvalidBet3		"无效的竞猜额！\n非有偿指导方式必须所有人的竞猜额都大于0。"
+    IDS_Bet                 "竞猜"
+    IDS_Bet_Tuition         "指导费"
+    IDS_Bet_WaitingRetrieve "正在查询，请稍候......"
+    IDS_Bet_NULL            "无效的对局，您参与竞猜的财富被退还。"
+    IDS_Bet_Win             "胜方：%s"
+    IDS_Bet_Escape          "逃跑(断线)方：%s"
+    IDS_Bet_ResultWin       "赢！ 您竞猜下注%d点，收回%d点，净赢%d点，税率%d.%d%%。"
+    IDS_Bet_ResultLose      "输！ 您竞猜下注%d点，收回%d点，净输%d点。"
+    IDS_Bet_ResultDraw      "平！ 您竞猜下注%d点，收回%d点，不输不赢。"
+    IDS_Bet_TeachMoney      "本次对局你收了对方%d点的指导费，"
+    IDS_Bet_TeachMoney2     "本次对局你付给对方%d点的指导费"
+    IDS_Bet_MoneyLess       "您现在的财富只剩%d点，不够参加竞猜！"
+    IDS_Bet_tpPlayerRetr    "查询本局游戏以前的竞猜下注记录"
+    IDS_Bet_tpSpectatorAll  "查询本局游戏所有的竞猜下注记录"
+	IDS_Bet_TaxRate			"税率：%d.%d%%。"
+	IDS_Bet_Point			"竞猜额"
+	IDS_Bet_NotMemberMe		"您不是会员，不能参加竞猜活动。"
+	IDS_Bet_NotMemberOp		"对方不是会员，不能参加竞猜活动。"
+	IDS_Bet_HaveBetted		"本局游戏已经有人参与了竞猜！"
+	IDS_Bet_PlyBetted		"比赛选手参与了竞猜！"
+	IDS_Bet_SpeBetted		"有旁观者参与了竞猜！"
+	IDS_Bet_Player			"比赛选手:"
+	IDS_Bet_Spectator		"旁观者:"
+	IDS_Bet_Prompt			"如果你也要参与竞猜请按“竞猜”按钮。"
+	IDS_Bet_BetMoney1		"对“%s”下注: %d 财富点"
+	IDS_Bet_BetMoney2		"“%s”下注: %d 财富点"
+	IDS_Bet_Draw2			"和局"
+    IDS_Bet_ResultWin2      "赢！ 您竞猜下注%d点(其中无效下注%d点)，收回%d点，净赢%d点，税率%d.%d%%。"
+    IDS_Bet_ResultLose2     "输！ 您竞猜下注%d点(其中无效下注%d点)，收回%d点，净输%d点。"
+    IDS_Bet_ResultDraw2     "平！ 您竞猜下注%d点(其中无效下注%d点)，收回%d点，不输不赢。"
+END
+
+
+/////////////////////////////////////////////
+//	图标资源
+/////////////////////////////////////////////
+
+IDI_WAITDLG             ICON    DISCARDABLE     "wait.ico"
+IDI_Bet1				ICON	DISCARDABLE     "bet1.ico"
+IDI_Bet2				ICON	DISCARDABLE     "bet2.ico"
+IDI_OURGAME				ICON	DISCARDABLE     "ourgame.ico"
+
+/////////////////////////////////////////////
+//	位图资源
+/////////////////////////////////////////////
+
+IDB_ST_START            BITMAP  DISCARDABLE     "ST_START.bmp"
+IDB_ST_OFFLINE          BITMAP  DISCARDABLE     "ST_OFFLINE.bmp"
+IDB_ST_PLAYING          BITMAP  DISCARDABLE     "ST_PLAYING.bmp"
+IDB_ST_ESCAPE           BITMAP  DISCARDABLE     "ST_ESCAPE.bmp"
+IDB_ST_AUTOPLAY			BITMAP  DISCARDABLE     "ST_AUTOPLAY.bmp"
+IDB_ST_AUTOPLAYOFFLINE  BITMAP	DISCARDABLE     "ST_AUTOPLAYOFFLINE.bmp"
+
+/////////////////////////////////////////////
+//	对话资源
+/////////////////////////////////////////////
+
+//状态条资源
+IDD_GLSTATUSBAR DIALOG DISCARDABLE  0, 0, 200, 19
+STYLE WS_CHILD
+FONT 8, "宋体"
+BEGIN
+END
+
+//对话条资源
+IDD_GLDIALOGBAR DIALOG DISCARDABLE  0, 0, 200, 19
+STYLE WS_CHILD
+FONT 8, "宋体"
+BEGIN
+END
+
+#if !defined(_NOGAME_)
+//老界面关于对话框
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 223, 57
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于游戏模版"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,178,7,38,16
+    ICON            IDI_OURGAME,IDC_STATIC_ICON,7,7,20,20
+    LTEXT           "联众世界\n游戏模版 版本0.09 Biuld 1",
+                    IDC_STR_ABOUT_VERSION,34,7,133,20
+    LTEXT           "北京联众电脑技术有限责任公司\n版权所有 (C)1998-2000.11",
+                    IDC_STR_ABOUT_COPYRIGHT,33,29,136,18
+END
+
+//新界面关于对话框
+IDD_ABOUTBOX2 DIALOGEX  0, 0, 223, 71
+STYLE WS_POPUP 
+FONT 9, "宋体"
+BEGIN
+    CONTROL			"",IDOK,"Button",BS_OWNERDRAW,178,7,38,16
+    ICON            IDI_OURGAME,IDC_STATIC_ICON,7,7,20,20
+    LTEXT           "联众世界\n游戏模版 版本0.09 Biuld 1",
+                    IDC_STR_ABOUT_VERSION,34,7,133,20
+    LTEXT           "北京联众电脑技术有限责任公司\n版权所有 (C)1998-2000.11",
+                    IDC_STR_ABOUT_COPYRIGHT,33,29,136,42
+END
+
+#endif
+
+//老的等待提示
+IDD_WAITDLG DIALOG DISCARDABLE  0, 0, 244, 51
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "提示信息"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDI_WAITDLG,IDC_WAITDLG_ICON,9,6,20,20
+    CTEXT           "",IDC_WAITDLG_MESSAGE,42,12,188,8
+    PUSHBUTTON      "取消(&C)",IDC_WAITDLG_CANCEL,97,33,50,14
+END
+
+//新的等待提示
+IDD_WAITDLG2 DIALOGEX 0, 0, 244, 51
+STYLE WS_POPUP 
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "",IDC_WAITDLG_CANCEL,"Button",BS_OWNERDRAW,97,33,50,14
+    ICON            IDI_WAITDLG,IDC_WAITDLG_ICON,9,6,20,20
+    LTEXT           "",IDC_WAITDLG_MESSAGE,42,12,188,8
+END
+
+//老界面提示信息对话框
+IDD_MSGBOXDLG DIALOG DISCARDABLE  0, 0, 207, 55
+STYLE (DS_MODALFRAME | WS_POPUP | WS_CAPTION) & ~WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "提示信息"
+FONT 9, "宋体"
+BEGIN
+    ICON            "",IDC_MSGBOXDLG_ICON,8,8,20,20
+    LTEXT           "",IDC_MSGBOXDLG_MESSAGE,40,14,157,11
+    CTEXT           "",IDC_MSGBOXDLG_TIMER,175,35,19,8
+    PUSHBUTTON      "",IDC_MSGBOXDLG_BTN1,55,33,43,14,NOT WS_VISIBLE
+    PUSHBUTTON      "",IDC_MSGBOXDLG_BTN2,55,33,43,14,NOT WS_VISIBLE
+    PUSHBUTTON      "",IDC_MSGBOXDLG_BTN3,55,33,43,14,NOT WS_VISIBLE
+    EDITTEXT        IDC_MSGDLG_RET,10,83,107,23, ES_AUTOHSCROLL
+    EDITTEXT        IDC_MSGDLG_RETPWD,10,103,107,23,ES_PASSWORD | ES_AUTOHSCROLL
+END
+
+//新界面提示信息对话框
+IDD_MSGBOXDLG2 DIALOGEX  0, 0, 207, 55
+STYLE WS_POPUP | DS_CONTEXTHELP
+FONT 9, "宋体"
+BEGIN
+    ICON            "",IDC_MSGBOXDLG_ICON,8,8,20,20
+    LTEXT           "",IDC_MSGBOXDLG_MESSAGE,40,14,157,11
+    CTEXT           "",IDC_MSGBOXDLG_TIMER,175,35,19,8
+    CONTROL         "",IDC_MSGBOXDLG_BTN1,"Button",BS_OWNERDRAW |NOT WS_VISIBLE,55,33,43,14
+    CONTROL         "",IDC_MSGBOXDLG_BTN2,"Button",BS_OWNERDRAW |NOT WS_VISIBLE,55,33,43,14
+    CONTROL         "",IDC_MSGBOXDLG_BTN3,"Button",BS_OWNERDRAW |NOT WS_VISIBLE,55,33,43,14
+    EDITTEXT        IDC_MSGDLG_RET,10,83,107,23, ES_AUTOHSCROLL
+    EDITTEXT        IDC_MSGDLG_RETPWD,10,103,107,23,ES_PASSWORD | ES_AUTOHSCROLL
+END
+
+//新界面帮助信息对话框
+IDD_GLGAME_HELP DIALOGEX  0, 0, 293, 284
+STYLE WS_POPUP
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "关闭(&C)",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,121,
+                    263,50,14
+    CONTROL         "下次启动再次提示(&T)",IDC_SHOWHELPNEXTSTART,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,252,200,15
+    LTEXT           "详细帮助请点击%s这里%s。",IDC_HELPDLG_DETAILURL,7,242,279,15
+END
+
+IDD_DIALOG_BetSpectator DIALOGEX 0, 0, 354, 97
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "旁观者竞猜"
+FONT 9, "宋体"
+BEGIN
+    EDITTEXT        IDC_EDIT_Bet1,151,24,40,12,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_Bet2,151,36,40,12,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_Bet3,151,48,40,12,ES_RIGHT | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "确定(&O)",IDOK,90,73,50,16
+    PUSHBUTTON      "查本局竞猜记录(&R)",IDC_BTN_Retrieve,163,73,80,16
+    PUSHBUTTON      "取消(&C)",IDCANCEL,269,73,50,16
+    ICON            IDI_Bet2,IDC_STATIC,9,15,20,20
+    CTEXT           "竞 猜 谁 赢",IDC_STATIC,41,7,110,15,SS_CENTERIMAGE,
+                    WS_EX_CLIENTEDGE
+    EDITTEXT        IDC_EDIT_Player3,41,48,110,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_Player1,41,24,110,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_Player2,41,36,110,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    CTEXT           "竞猜额",IDC_STATIC,151,7,40,15,SS_CENTERIMAGE,
+                    WS_EX_CLIENTEDGE
+    EDITTEXT        IDC_EDIT_PreBet1,231,24,40,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PreBet2,231,36,40,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PreBet3,231,48,40,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PreBet1My,191,24,40,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PreBet2My,191,36,40,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PreBet3My,191,48,40,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,34,67,
+                    316,1
+    CTEXT           "竞猜人次",IDC_STATIC,271,7,37,15,SS_CENTERIMAGE,
+                    WS_EX_CLIENTEDGE
+    EDITTEXT        IDC_EDIT_BetCount1,271,24,37,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_BetCount2,271,36,37,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_BetCount3,271,48,37,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PreBet1Ply,309,24,37,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PreBet2Ply,309,36,37,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PreBet3Ply,309,48,37,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    CTEXT           "总竞猜额",IDC_STATIC,231,7,40,15,SS_CENTERIMAGE,
+                    WS_EX_CLIENTEDGE
+    CTEXT           "自己的",IDC_STATIC,191,7,40,15,SS_CENTERIMAGE,
+                    WS_EX_CLIENTEDGE
+    CTEXT           "选手的",IDC_STATIC,309,7,37,15,SS_CENTERIMAGE,
+                    WS_EX_CLIENTEDGE
+END
+
+IDD_DIALOG_BetPlayer DIALOGEX 0, 0, 185, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选手竞猜"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_BetMy,82,21,46,12,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_BetOp,82,33,46,12,ES_RIGHT | ES_AUTOHSCROLL
+    CONTROL         "有偿指导方式",IDC_CHECK_Teach,"Button",BS_AUTOCHECKBOX | 
+                    BS_VCENTER | WS_TABSTOP,47,50,72,10
+    DEFPUSHBUTTON   "确定(&O)",IDOK,60,73,40,14
+    PUSHBUTTON      "取消(&C)",IDCANCEL,116,73,39,14
+    PUSHBUTTON      "查以前的(&R)",IDC_BTN_Retrieve,123,48,51,13
+    LTEXT           "10",IDC_STATIC_Count,164,75,10,9
+    EDITTEXT        IDC_EDIT_PreBetMy,128,21,46,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PreBetOp,128,33,46,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    CTEXT           "竞猜(指导费)",IDC_STATIC_Bet,82,7,45,14,SS_CENTERIMAGE | 
+                    WS_BORDER,WS_EX_CLIENTEDGE
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,41,67,
+                    134,1
+    CTEXT           "选手",IDC_STATIC,46,7,35,14,SS_CENTERIMAGE | WS_BORDER,
+                    WS_EX_CLIENTEDGE
+    CTEXT           "自己",IDC_STATIC,46,21,35,12,SS_CENTERIMAGE | WS_BORDER,
+                    WS_EX_CLIENTEDGE
+    CTEXT           "对方",IDC_STATIC,46,33,35,12,SS_CENTERIMAGE | WS_BORDER,
+                    WS_EX_CLIENTEDGE
+    ICON            IDI_Bet1,IDC_STATIC,11,15,21,21
+    CTEXT           "以前的",IDC_STATIC,128,7,46,14,SS_CENTERIMAGE | 
+                    WS_BORDER,WS_EX_CLIENTEDGE
+END
+
+/////////////////////////////////////////////
+//	光标串资源
+/////////////////////////////////////////////
+
+IDR_HANDCURSOR          HANDCURSOR  
+{	0x0000,0x0000,0x0003,0x0000,0x0003,0x0000,0x0003,0x0000,
+	0x0003,0x0000,0x0003,0x0000,0x6d03,0x0080,0x6d03,0x0080,
+	0x6d03,0x0080,0x6d1b,0x0080,0xff1b,0x0080,0xff1b,0x0080,
+	0xff1f,0x0080,0xff1f,0x0080,0xff0f,0x0080,0xff07,0x0000,
+	0xff03,0x0000,0xff03,0x0000,0x0000,0x0000,0x0000,0x0000,
+	0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,
+	0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,
+	0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,
+	0xfffc,0xffff,0x7ff8,0xffff,0x7ff8,0xffff,0x7ff8,0xffff,
+	0x7ff8,0xffff,0x12f8,0xff7f,0x00f8,0xff3f,0x00f8,0xff3f,
+	0x00c0,0xff3f,0x00c0,0xff3f,0x00c0,0xff3f,0x00c0,0xff3f,
+	0x00c0,0xff3f,0x00c0,0xff3f,0x00e0,0xff3f,0x00f0,0xff7f,
+	0x00f8,0xff7f,0x00f8,0xff7f,0x00f8,0xff7f,0xffff,0xffff,
+	0xffff,0xffff,0xffff,0xffff,0xffff,0xffff,0xffff,0xffff,
+	0xffff,0xffff,0xffff,0xffff,0xffff,0xffff,0xffff,0xffff,
+	0xffff,0xffff,0xffff,0xffff,0xffff,0xffff,0xffff,0xffff}
+
+#endif // #ifndef __GLGAMEBASE_RC__

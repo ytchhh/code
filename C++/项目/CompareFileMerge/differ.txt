@@ -1,0 +1,22 @@
+
+
+replace
+xc
+ads yuihjk
+end
+
+insert
+kl
+lk
+end
+
+replace
+mn
+nm
+end
+
+delete
+cd
+vc
+end
+

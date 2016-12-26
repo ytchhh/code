@@ -1,0 +1,24 @@
+﻿生成启动时间为 2016/8/10 17:33:37。
+     1>项目“F:\C语言代码\20160810\20160810\20160810.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在对“Debug\20160810.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         f:\软件\2010\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt "H:\LIST基本操作作业\list.c" "H:\LIST基本操作作业\main.c"
+         main.c
+     1>h:\list基本操作作业\main.c(6): error C2085: “main”: 不在形参表中
+     1>h:\list基本操作作业\main.c(6): error C2143: 语法错误 : 缺少“;”(在“{”的前面)
+     1>h:\list基本操作作业\main.c(7): error C2082: 形参“head”的重定义
+     1>h:\list基本操作作业\main.c(9): warning C4098: “print”:“void”函数返回值
+         list.c
+     1>h:\list基本操作作业\list.c(5): error C2082: 形参“creat”的重定义
+     1>h:\list基本操作作业\list.c(5): error C2143: 语法错误 : 缺少“;”(在“{”的前面)
+     1>h:\list基本操作作业\list.c(6): error C2082: 形参“head”的重定义
+     1>h:\list基本操作作业\list.c(21): warning C4098: “print”:“void”函数返回值
+     1>h:\list基本操作作业\list.c(33): error C2084: 函数“void print(Node *)”已有主体
+                 h:\list基本操作作业\list.h(11) : 参见“print”的前一个定义
+         正在生成代码...
+     1>已完成生成项目“F:\C语言代码\20160810\20160810\20160810.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.12

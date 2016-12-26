@@ -1,0 +1,108 @@
+/*
+题目:求1+2+...+n,要求不能使用乘除法，for,while,if,else,switch,case等关键字及条件判断语句(A?B:C)
+	这个问题本身没有太多的实际意义，但不少面试官认为这个可以考察应聘者发散思维能力的题目，而发散思维能够反映出应聘者知识面
+的宽度，以及对编程相关技术理解的深度。
+	通常求1+2+..+n除了用公式n(n+1)/2之外，无外乎循环和递归两种思想，由于已经明确限制for和while的使用，循环已经不能再用了。
+递归函数也需要用if语句或者条件判断语句来判断是继续递归下去还是终止递归，但现在题目已经补允许使用这两种语句了。
+*/
+/*	
+	解法一:利用构造函数求解
+	我们仍然围绕循环做文章，循环只是让相同的代码重复执行n遍而已，我们完全可以不用for和while来达到这个效果。比如我们先定义
+一个类型，接着创建n个该类型的实例，那么这个类型的构造函数将确定会被调用n次。我们可以将与累加相关的代码放到构造函数里面里。
+*/
+#if 0
+int Sum_Solution1(int n);
+class Temp
+{
+ public:
+ 	Temp() { ++N;Sum += N; }
+	int GetSum() const { return Sum; }
+ private:
+ 	static int N;
+	static int Sum;
+};
+int Temp::N = 0;
+int Temp::Sum = 0;
+int main()
+{
+	cout<<"sum="<<Sum_Solution1(100)<<endl;
+	return 0;
+}
+int Sum_Solution1(int n)
+{
+	Temp *a = new Temp[n];
+	delete []a;
+	a = NULL;
+	return a->GetSum();
+}
+#endif
+/*
+	 解法二:利用虚函数求解
+	 我们同样也可以围绕递归做文章。既然不能在一个函数中判断是不是应该终止递归，那么我们不妨定义两个函数，一个函数充当递归函数
+的角色，另一个函数处理终止递归的情况，我们需要做的是在两个函数里二选一。从二选一我们很自然的想到布尔变量，比如值为true(1)的时候
+调用第一个函数，值为false(0)的时候调用第二个函数。那现在的问题是如何把数值变量n转换为布尔值。如果对n连续做两次反运算，即!!n
+,那么非零的n转换为true，0转换为false。
+*/
+#if 0
+int Sum_Solution2(int n);
+class A;
+A *Array[2];
+class A
+{
+ public:
+ 	virtual int Sum(int n)
+	 	{
+			 return 0;
+		}
+};
+class B:public A
+{
+ public:
+ 	virtual int Sum(int n)
+	 {
+		 return Array[!!n]->Sum(n-1) + n;
+	 }
+};
+int main()
+{
+	cout<<"SUM="<<Sum_Solution2(100)<<endl;
+	return 0;
+}
+int Sum_Solution2(int n)
+{
+	A a;
+	B b;
+	Array[0] = &a;
+	Array[1] = &b;
+	int value = Array[1]->Sum(n);
+	return value;
+}
+#endif
+/*
+	解法三:利用函数指针求解
+	在纯C语言的编程环境中，我们不能使用虚函数，此时可以用函数指针来模拟，这样代码可能还更加直观一些。
+*/
+ #if 0
+ #include<stdio.h>
+ typedef int (*fun) (int);
+ int Sum_Solution3_Teminator(int n)
+ {
+	 return 0;
+ }
+ int Sum_Solution3(int n)
+ {
+	 fun f[2] = {Sum_Solution3_Teminator,Sum_Solution3};
+	 return n + f[!!n]( n - 1 );
+ }
+ int main()
+ {
+	 printf("sum=%d\n",Sum_Solution3(100));
+	 return 0;
+ }
+ #endif
+
+
+
+
+
+

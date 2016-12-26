@@ -1,0 +1,19 @@
+﻿生成启动时间为 2016/8/19 6:53:01。
+     1>项目“F:\C语言代码\2016081518道题\2016081518道题\2016081518道题.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在对“Debug\2016081518道题.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         所有输出均为最新。
+       ManifestResourceCompile:
+         所有输出均为最新。
+       Link:
+         f:\软件\2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\C语言代码\2016081518道题\Debug\2016081518道题.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\2016081518道题.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\C语言代码\2016081518道题\Debug\2016081518道题.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\C语言代码\2016081518道题\Debug\2016081518道题.lib" /MACHINE:X86 "Debug\2016081518道题.exe.embed.manifest.res"
+         Debug\20160815test.obj
+         Debug\2048.obj
+     1>2048.obj : error LNK2005: _main 已经在 20160815test.obj 中定义
+     1>F:\C语言代码\2016081518道题\Debug\2016081518道题.exe : fatal error LNK1169: 找到一个或多个多重定义的符号
+     1>已完成生成项目“F:\C语言代码\2016081518道题\2016081518道题\2016081518道题.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.42

@@ -1,0 +1,13 @@
+1.预处理
+gcc -o test.i -E test.c
+
+2.编译
+gcc -o test.s -S test.i
+
+3.汇编
+gcc -o test.o -c test.s
+
+4.链接
+gcc -o test test.o
+
+

@@ -1,0 +1,149 @@
+
+#include <stdio.h>
+#include <malloc.h>
+typedef struct node
+{
+	char ch;
+	struct node *left;
+	struct node *right;
+}Node;
+typedef struct tree
+{
+	Node *root;
+	char flag;
+}Tree;
+
+void InitTree(Tree *t)
+{
+	t->root = NULL;
+	t->flag = '*';
+}
+Node *create(Tree *t)
+{
+	char ch;
+	ch = getchar();
+	if(ch == '*')
+		return NULL;
+	else
+	{
+		Node *newnode = (Node*)malloc(sizeof(Node));
+		newnode->ch = ch;
+		newnode->left = create(t);
+		newnode->right = create(t);
+		return newnode;
+	}
+}
+void preOrder(Node *root)
+{
+	if(root != NULL)
+	{
+		printf("%c ",root->ch);
+		preOrder(root->left);
+		preOrder(root->right);
+	}
+}
+void inOrder(Node *root)
+{
+	if(root != NULL)
+	{
+		inOrder(root->left);
+		printf("%c ",root->ch);
+		inOrder(root->right);
+	}
+}
+void postOrder(Node *root)
+{
+	if(root != NULL)
+	{
+		postOrder(root->left);
+		postOrder(root->right);
+		printf("%c ",root->ch);
+	}
+}
+int count(Node *root)
+{
+/*	static int i = 0;
+	if(root != NULL)
+	{
+		count(root->left);
+		count(root->right);
+		i++;
+	}
+	return i*/
+	if(root == NULL)
+		return 0;
+	else
+		return count(root->left)+count(root->right)+1;	
+}
+int height(Node *root)
+{
+	if(root == NULL)
+		return 0;
+	else
+	{
+		int h1 = height(root->left);
+		int h2 = height(root->right);
+		return h1>h2?(h1+1):(h2+1);
+	}
+}
+Node *search(Node *root,char k)
+{
+	Node *q = NULL;
+	if(root == NULL)
+		return NULL;
+	if(root->ch == k)
+		return root;
+	q = search(root->left,k);
+	if(q != NULL)
+		return q;
+	return search(root->right,k);
+}
+Node *parent(Node *root,Node *p)
+{
+	Node *q = NULL;
+	if(root == NULL)
+		return NULL;
+	/*if(root->left != NULL )
+		if(root->left->ch == k)
+		return root;
+	  if(root->right != NULL)
+	   if(root->right->ch == k)
+	   return root;
+	*/
+	if(root->left == p || root->right == p)
+		return root;
+	q = parent(root->left,p);
+	if(q != NULL)
+		return q;
+	return parent(root->right,p);
+}
+Node *leftChild(Node *root)
+{
+}
+Node *rightChild(Node *root)
+{
+}
+
+int main()
+{
+	Tree t;
+	Node *q = NULL,*p = NULL;
+	InitTree(&t);
+	t.root = create(&t);
+	preOrder(t.root);
+	printf("\n");
+	inOrder(t.root);
+	printf("\n");
+	postOrder(t.root);
+	printf("\n");
+	printf("count = %d\n",count(t.root));
+	printf("height = %d\n",height(t.root));
+	if((q = search(t.root,'b')) != NULL)
+		printf("%c ",q->ch);
+	else
+		printf("not find\n");
+
+	q = parent(t.root,q);
+	printf("%c \n",q->ch);
+	return 0;
+}

@@ -1,0 +1,3 @@
+wang 1 m 32 xian 5000 good college
+yang 2 m 33 huxia 4500 good senior
+liu 3 m 50 xian 6000 good college
